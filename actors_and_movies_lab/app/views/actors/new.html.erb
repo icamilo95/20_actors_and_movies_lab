@@ -1,0 +1,8 @@
+<h1>Add new Actor</h1>
+
+
+<%= form_for @actor do |f| %>
+  <%= f.text_field :name, :placeholder => "Name" %>
+  
+  <%= f.submit "Add" %>
+<% end %>

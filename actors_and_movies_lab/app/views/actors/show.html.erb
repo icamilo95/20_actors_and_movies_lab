@@ -1,0 +1,20 @@
+<h1>Actors#show</h1>
+
+<h1><%= @actor.name %></h1>
+
+<h3>Movies performed: </h3>
+<% @movies.each do |movies| %>
+   <li>
+      <%= "#{movies.title} (#{movies.year})"%> 
+      <%= link_to "Delete", remove_movie_path(@actor, movies), :method => :delete %>
+   </li>
+<% end %>
+ 
+
+<br>
+
+<%= link_to "Edit", edit_actor_path(@actor) %>
+<%= link_to "Back to actors", actors_path %>
+
+
+

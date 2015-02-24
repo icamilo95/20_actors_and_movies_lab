@@ -1,0 +1,20 @@
+<h1>Edit</h1>
+
+<%= form_for @movie do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_field :year %>
+  <%= f.submit "Update" %>
+<% end %>
+
+<br>
+   <%= form_tag add_actor_path do |f|%>
+    <select name="actor_id">
+      <% @actors.each do |actor| %>
+      <option value="<%=actor.id%>"><%=actor.name %></option>
+       
+      <% end %>
+    </select>
+    <input type="submit" value="Add">
+  <% end %> 
+<br>
+<%= button_to "Delete", movie_path(@movie), :method => :delete %>
